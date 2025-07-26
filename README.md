@@ -1,33 +1,64 @@
-# 🔐 SQL Injection Demo (Unsafe Flask App)
+# 🔐 SQL Injection Demo App
 
-This is a beginner-level **SQL Injection demo** using Python Flask and SQLite.  
-⚠️ **For educational use only. Do not use this in production.**
+A simple Flask + SQLite web app intentionally designed to be **vulnerable to SQL Injection attacks**. Created for learning and demonstrating how SQL injection works and how to prevent it using secure coding practices.
+
+> ⚠️ This project is for educational purposes only. Do not use it in production.
 
 ---
 
-## 🚀 How to Run
+## 🚀 Features
 
-1. **Install Flask:**
+- Insecure login form (vulnerable to SQL Injection)
+- Basic HTML interface
+- SQLite backend
+- Fix examples using parameterized queries
+
+---
+
+## 🛠 Tech Stack
+
+- Python 3
+- Flask (Web Framework)
+- SQLite3 (Database)
+- HTML (for frontend)
+
+---
+
+## 📦 Installation
+
 ```bash
-pip install flask
-Initialize the Database:
-
-bash
-Copy
-Edit
-python init_db.py
-Run the App:
-
-bash
-Copy
-Edit
-python app.py
-Open in Browser:
-
+git clone https://github.com/rakeshchinna1724/sql-injection-demo.git
+cd sql-injection-demo
+pip install -r requirements.txt
+python init_db.py       # Setup the database
+python app.py           # Start the Flask server
 Visit: http://127.0.0.1:5000
 
-Test Users:
+🧪 SQL Injection Example
+Try logging in with:
 
-admin
+vbnet
+Copy
+Edit
+Username: ' OR '1'='1
+Password: anything
 
-Try SQL Injection: ' OR '1'='1
+
+📚 Learning Resources
+OWASP: SQL Injection
+
+Python Flask Tutorial
+
+SQL Injection Basics – GeeksforGeeks
+
+
+## 📷 Screenshots
+
+### 💻 Login Page
+![Login Form](screenshots/login-form.png)
+
+### 🧪 Injection Bypass
+![Injection Success](screenshots/terminal-success.png)
+
+### 🔐 Fixed Version
+![Secure Blocked](screenshots/secure-blocked.png)

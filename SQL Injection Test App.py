@@ -18,8 +18,7 @@ def login():
     try:
         conn = sqlite3.connect('users.db')
         cursor = conn.cursor()
-       cursor.execute("SELECT * FROM users WHERE username = ?", (username,))
-
+        query = f"SELECT * FROM users WHERE username = '{username}'"
         print("Running query:", query)
         cursor.execute(query)
         result = cursor.fetchall()
@@ -30,4 +29,4 @@ def login():
     except Exception as e:
         return f"❌ Internal Error: {e}"
 
-app.run(debug=True)
+app.run(debug=False, use_reloader=False)
